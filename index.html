@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Google</title>
+</head>
+<body>
+    <div class="header">
+        <ul class="right">
+            <li>Gmail</li>
+            <li>Images</li>
+            <li>Apps</li>
+            <li class="circle30">3</li>
+            <li class="circle60">GP</li>
+        </ul>
+    </div>
+    <div class="search">
+        <img src="images/google.png" alt="Search google">
+        <form class="form-search" action="https://google.com/search" method="get">
+            <div class="form-group">
+                <input type="text" class="form-control input-lg" name="search_query" id="search_query">
+                <div class="search-mic"></div>
+            </div>
+            <div class="form-group">
+                <input type="button" onclick="checkTyped()" class="btn-default btn" value="Google Search">
+                <input type="button" class="btn btn-default" value="I'm Feeling Lucky">
+            </div>
+        </form>
+        <ul class="search_lang">
+            <li>Google offered in:</li>
+            <li><a href="#">Luganda</a></li>
+            <li><a href="#">Kiswahili</a></li>
+            <li><a href="#">Ikinyarwanda</a></li>
+            <li><a href="#">Luo</a></li>
+            <li><a href="#">Runyakitara</a></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <div class="location">
+            <span>
+                Uganda
+            </span>
+        </div>
+        <div class="links">
+            <ul class="left pull-left">
+                <li><a href="#">Advertising</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+            <ul class="right pull right">
+                <li>
+                    <a href="#">Privacy</a>
+                </li>
+                <li>
+                    <a href="#">Terms</a>
+                </li>
+                <li>
+                    <a href="#">Settins</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+
+        // checktyped function is used to check whether the search 
+        // box is empty or not
+        function checkTyped(){
+            var fieldText = gQuery('search_query').value;
+            /*  Return based on whats in the search box
+                "Please type something in the search box"  if empty
+                or the search box value
+
+             */
+            if(fieldText == ''){
+                window.alert("Please type something in the search box");   
+                gQueryg('search_query').focus()
+            }else{
+                window.alert(""+fieldText);
+            }            
+        }
+        // Hackish way of using Jquery like functions $()  or jQuery
+        function gQuery(div){
+            return document.getElementById(div);
+        }
+    </script>
+</body>
+</html>
